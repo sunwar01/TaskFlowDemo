@@ -1,0 +1,32 @@
+﻿version: "3.9"
+
+services:
+  db:
+    image: postgres:16
+    container_name: taskflow-postgres
+    restart: always
+    environment:
+      POSTGRES_DB: taskflow_demo_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: yourpassword
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  taskflowdemo.api:
+    build:
+      context: .
+      dockerfile: TaskFlowDemo.Api/Dockerfile
+    container_name: taskflowdemo-api
+    depends_on:
+      - db
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__DefaultConnection: "Host=db;Port=5432;Database=taskflow_demo_db;Username=postgres;Password=yourpassword"
+    ports:
+      - "5000:8080" 
+    restart: always
+
+volumes:
+  db_data:
