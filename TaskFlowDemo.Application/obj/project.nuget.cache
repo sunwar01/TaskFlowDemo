@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "7mCnMQuYkiw=",
+  "dgSpecHash": "ZWcDyBjWvqA=",
   "success": true,
   "projectFilePath": "C:\\Users\\SW\\RiderProjects\\TaskFlowDemo\\TaskFlowDemo.Application\\TaskFlowDemo.Application.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\SW\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.2\\microsoft.extensions.dependencyinjection.abstractions.8.0.2.nupkg.sha512"
+  ],
   "logs": []
 }
